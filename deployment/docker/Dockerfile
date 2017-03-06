@@ -23,6 +23,15 @@ RUN pip install uwsgi
 # Open port 8080 as we will be running our uwsgi socket on that
 EXPOSE 8080
 
+# Install Node js
+RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
+RUN apt-get -y --force-yes install nodejs
+
+# Install grunt
+RUN npm install -g grunt-cli
+RUN cd /home/web/django_project/; npm install --save-dev grunt grunt-contrib-concat grunt-contrib-uglify
+
 #USER www-data
 
 WORKDIR /home/web/django_project
