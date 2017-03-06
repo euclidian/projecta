@@ -266,6 +266,14 @@ enable-machine:
 	@echo "------------------------------------------------------------------"
 	@echo "eval \"$(docker-machine env projecta)\""
 
+gruntserver:
+	@echo
+	@echo "------------------------------------------------------------------"
+	@echo "Run grunt"
+	@echo "------------------------------------------------------------------"
+	@docker exec $(PROJECT_ID)-uwsgi python manage.py gruntserver
+
+
 # ----------------------------------------------------------------------------
 #    DEVELOPMENT C O M M A N D S
 # --no-deps will attach to prod deps if running
