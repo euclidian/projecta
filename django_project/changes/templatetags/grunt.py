@@ -2,6 +2,7 @@ from django import template
 from django.conf import settings
 from django.utils.safestring import mark_safe
 from django.contrib.staticfiles.storage import staticfiles_storage
+from changes.conf import settings as grunt_settings
 
 
 register = template.Library()
@@ -16,9 +17,10 @@ def grunt_module(module):
     if not settings.DEBUG:
         return mark_safe(
             """<script src={module}></script>""".format(
-                module=staticfiles_storage.url(module)
+                module=staticfiles_storage.url(grunt_settings.GRUNT_MODULES[module]["out"]),
             )
         )
+
 
     return mark_safe(
         """<script src="{module}""></script>""".format(
