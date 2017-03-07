@@ -76,3 +76,14 @@ PIPELINE_CSS['project'] = {
         'media': 'screen, projection',
     },
 }
+
+GRUNT_MODULES = {
+    "module_1" : {
+        "files" : ["static/a.js","static/b.js"],
+        "out"   : "module1.js"
+    },
+    "module_2" : {
+        "files" : ["static/a.js","static/b.js"],
+        "out"   : "module2.js"
+    }
+}
