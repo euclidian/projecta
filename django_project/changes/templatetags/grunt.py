@@ -21,9 +21,13 @@ def grunt_module(module):
             )
         )
 
-
-    return mark_safe(
-        """<script src="{module}""></script>""".format(
-            module=staticfiles_storage.url(module)
-        )
+    scripts = grunt_settings.GRUNT_MODULES[module]["files"]
+    out_script = ""
+    for script in scripts:
+        out_script += mark_safe(
+                """<script src="{module}""></script>""".format(
+                    module=staticfiles_storage.url(script)
+            )
     )
+
+    return out_script
