@@ -20,4 +20,8 @@ def grunt_module(module):
             )
         )
 
-    return
+    return mark_safe(
+        """<script src="{module}""></script>""".format(
+            module=staticfiles_storage.url(module)
+        )
+    )
