@@ -2,6 +2,7 @@
 """Urls for changelog application."""
 from django.conf.urls import patterns, url
 from django.conf import settings
+from changes.views.gruntview import grunttest
 
 from views import (
     # Project
@@ -67,6 +68,7 @@ urlpatterns = patterns(
     url(regex='^project/submit-github-repo/$',
         view=GithubSubmitView.as_view(),
         name='submit-github-repo'),
+    url(r'^grunttest', grunttest, name="grunttest"),
 )
 
 # Prevent cloudflare from showing an ad laden 404 with no context
