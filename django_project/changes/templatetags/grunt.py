@@ -16,18 +16,14 @@ def grunt_module(module):
     """
     if not settings.DEBUG:
         return mark_safe(
-            """<script src={module}></script>""".format(
-                module=staticfiles_storage.url(grunt_settings.GRUNT_MODULES[module]["out"]),
+            """<script type="text/javascript" src={optimized}></script>""".format(
+                optimized=staticfiles_storage.url(grunt_settings.GRUNT_MODULES[module]["optimized"]),
             )
         )
 
-    scripts = grunt_settings.GRUNT_MODULES[module]["files"]
-    out_script = ""
-    for script in scripts:
-        out_script += mark_safe(
-                """<script src="{module}""></script>""".format(
-                    module=staticfiles_storage.url(script)
-                )
+    return mark_safe(
+        """<script data-main={main} src={requirejs}></script>""".format(
+            main=staticfiles_storage.url(grunt_settings.GRUNT_MODULES[module]["main"]),
+            requirejs=grunt_settings.REQUIRED_JS_PATH
         )
-
-    return out_script
+    )

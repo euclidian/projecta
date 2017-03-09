@@ -22,11 +22,11 @@ require.config({
 		}
 	},
 	paths: {
-		jquery: '/static/modules/jquery/dist/jquery',
-		underscore: '/static/modules/underscore/underscore',
-		backbone: '/static/modules/backbone/backbone',
-		backboneLocalstorage: '/static/modules/backbone.localstorage/backbone.localStorage',
-		text: '/static/modules/requirejs-text/text'
+		jquery: 'modules/jquery/dist/jquery',
+		underscore: 'modules/underscore/underscore',
+		backbone: 'modules/backbone/backbone',
+		backboneLocalstorage: 'modules/backbone.localstorage/backbone.localStorage',
+		text: 'modules/requirejs-text/text'
 	}
 });
 

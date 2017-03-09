@@ -23,10 +23,10 @@ module.exports = function(grunt) {
         requirejs: {
             compile: {
                 options: {
-                    baseUrl: 'todo/static/js/',
+                    baseUrl: 'todo/static/js',
                     mainConfigFile: 'todo/static/js/main.js',
-                    name: 'main',
-                    include: ['todo/static/js/main.js'],
+                    name: 'modules/almond/almond',
+                    include: ['main.js'],
                     out: '../static/js/optimized.js'
                 }
             }
