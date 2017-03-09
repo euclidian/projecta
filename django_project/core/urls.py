@@ -33,12 +33,13 @@ def handler500(request):
 urlpatterns = []
 # These patterns work if there is a locale code injected in front of them
 # e.g. /en/reports/
-urlpatterns += i18n_patterns(
+urlpatterns += patterns(
     url(r'^site-admin/', include(admin.site.urls)),
-    url(r'^', include('base.urls')),
-    url(r'^', include('changes.urls')),
-    url(r'^', include('vota.urls')),
-    url(r'^', include('github_issue.urls')),
+    # url(r'^', include('base.urls')),
+    # url(r'^', include('changes.urls')),
+    # url(r'^', include('vota.urls')),
+    # url(r'^', include('github_issue.urls')),
+    url(r'^', include('todo.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     # url(r'^password/reset/done/$', auth_views.password_reset_done,{
     #     'template_name': 'userena/password_reset_done.html'},

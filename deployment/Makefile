@@ -1,5 +1,5 @@
 PROJECT_ID := projecta
-
+PROJECT_PATH := /Users/user/Documents/Kartoza/projecta
 SHELL := /bin/bash
 
 # ----------------------------------------------------------------------------
@@ -148,7 +148,7 @@ shell:
 	@echo "------------------------------------------------------------------"
 	@echo "Shelling in in production mode"
 	@echo "------------------------------------------------------------------"
-	@docker-compose -p $(PROJECT_ID) run uwsgi /bin/bash
+	@docker-compose -f $(PROJECT_PATH)/deployment/docker-compose.yml -p $(PROJECT_ID) run uwsgi /bin/bash
 
 superuser:
 	@echo

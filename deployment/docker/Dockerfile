@@ -31,7 +31,7 @@ RUN apt-get -y --force-yes install nodejs
 # Install grunt
 RUN npm install -g grunt-cli
 COPY package.json /home/web/django_project/package.json
-RUN cd /home/web/django_project && npm install --save-dev grunt grunt-contrib-concat grunt-contrib-uglify
+RUN cd /home/web/django_project && npm install --save-dev grunt grunt-contrib-concat grunt-contrib-uglify grunt-cache-breaker
 
 #USER www-data
 

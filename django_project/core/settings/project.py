@@ -17,6 +17,7 @@ INSTALLED_APPS += (
     'changes',
     'github_issue',
     'vota',
+    'todo',
 )
 
 # Due to profile page does not available,
