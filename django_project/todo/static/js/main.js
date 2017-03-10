@@ -22,7 +22,7 @@ require.config({
 		}
 	},
 	paths: {
-		jquery: 'modules/jquery/dist/jquery',
+		jquery: 'modules/jquery/jquery',
 		underscore: 'modules/underscore/underscore',
 		backbone: 'modules/backbone/backbone',
 		backboneLocalstorage: 'modules/backbone.localstorage/backbone.localStorage',
