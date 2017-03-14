@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                     mainConfigFile: 'todo/static/js/main.js',
                     name: 'modules/almond/almond',
                     include: ['main.js'],
-                    out: '../static/js/optimized.js'
+                    out: 'todo/static/js/optimized.js'
                 }
             }
         }
@@ -40,5 +40,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-requirejs');
 
     // Register tasks here.
-    grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('default', ['requirejs']);
 };
